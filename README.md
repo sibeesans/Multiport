@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <h2 align="center">
 <hr>
-🚀 XRAY Multiport Websocket Premium V2 By Vinstechmy 🚀
+🚀 XRAY Multiport Websocket Premium V2 By GEO PROJECT 🚀
 <h2><hr>
   
 <h2 align="center"> ♦️Supported Linux Distribution♦️</h2>
