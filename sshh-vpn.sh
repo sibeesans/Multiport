@@ -284,7 +284,7 @@ chmod +x menu-ws
 chmod +x menu-vless
 chmod +x menu-xtr
 chmod +x menu-xrt
-chmod +x cerxray
+chmod +x certxray
 chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
