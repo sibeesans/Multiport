@@ -130,14 +130,13 @@ fi
 mkdir /var/lib/premium-script;
 mkdir /var/lib/crot-script;
 clear
-echo -e "${red}♦️${NC} ${green}Established By wunuit 2022${NC} ${red}♦️${NC}"
+#echo -e "${red}♦️${NC} ${green}Established By wunuit 2022${NC} ${red}♦️${NC}"
 #DOWNLOAD SOURCE SCRIPT
-clear
-echo -e "${GREEN} CUSTOM SETUP DOMAIN VPS     ${NC}"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo "1. Use Domain From Script / Gunakan Domain Dari"
+echo -e "${red}♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
+echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo "1. Use Domain From Script / Gunakan Domain Dari Script"
 echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 read -rp "Choose Your Domain Installation : " dom 
 
 if test $dom -eq 1; then
