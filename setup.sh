@@ -155,9 +155,9 @@ fi
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
-#echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-#echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
-#echo "$host" >> /root/domain
+echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
+echo "$host" >> /root/domain
 #clear
 #echo -e "\e[0;32mREADY FOR INSTALLATION SCRIPT...\e[0m"
 #echo -e ""
@@ -170,8 +170,8 @@ sleep 3
 clear
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 3
-wget -q -O /root/ins-xray.sh "https://${Server_URL}/ins-xray.sh"
-chmod +x /root/ins-xray.sh
+wget -q -O /root/xray.sh "https://${Server_URL}/xray.sh"
+chmod +x /root/xray.sh
 ./ins-xray.sh
 echo -e "${GREEN}Done!${NC}"
 sleep 2
@@ -179,7 +179,7 @@ clear
 #Install SET-BR
 echo -e "\e[0;32mINSTALLING SET-BR...\e[0m"
 sleep 1
-wget -q -O /root/ins-xray.sh "https://${Server_URL}/set-br.sh"
+wget -q -O /root/set-br.sh "https://${Server_URL}/set-br.sh"
 chmod +x /root/set-br.sh
 ./set-br.sh
 echo -e "${GREEN}Done!${NC}"
