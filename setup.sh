@@ -132,7 +132,7 @@ mkdir /var/lib/crot-script;
 clear
 #echo -e "${red}♦️${NC} ${green}Established By wunuit 2022${NC} ${red}♦️${NC}"
 #DOWNLOAD SOURCE SCRIPT
-echo -e "${red}♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
+echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
 echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo "1. Use Domain From Script / Gunakan Domain Dari Script"
 echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
@@ -171,7 +171,7 @@ echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 3
 wget -q -O /root/xray.sh "https://${Server_URL}/xray.sh"
 chmod +x /root/xray.sh
-./ins-xray.sh
+./xray.sh
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
