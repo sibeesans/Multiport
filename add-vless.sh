@@ -107,6 +107,7 @@ clear
 	done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
+read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 
