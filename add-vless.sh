@@ -67,7 +67,7 @@ Bloman() {
 
 PERMISSION() {
     MYIP=$(wget -qO- ipv4.icanhazip.com);
-    IZIN=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/sibeesans/IP/main/access | awk '{print $2}' | grep $MYIP)
     if [[ "$MYIP" = "$IZIN" ]]; then
         Bloman
     else
