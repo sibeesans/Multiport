@@ -9,7 +9,7 @@ clear
 IP=$(wget -qO- icanhazip.com);
 date=$(date +"%Y-%m-%d")
 clear
-echo " VPS Data Backup By wunuit "
+echo " VPS Data Backup "
 sleep 1
 echo ""
 echo -e "[ ${green}INFO${NC} ] Please Insert Password To Secure Backup Data ."
@@ -39,7 +39,7 @@ url=$(rclone link dr:backup/$IP-$date.zip)
 id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 clear
-echo -e "\033[1;37mVPS Data Backup By wunuit\033[0m
+echo -e "\033[1;37mVPS Data Backup\033[0m
 \033[1;37mTelegram : https://t.me/wunuit / @wunuit\033[0m"
 echo ""
 echo "Please Copy Link Below & Save In Notepad"
@@ -54,3 +54,5 @@ echo "If you want to restore data, please enter the link above"
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
