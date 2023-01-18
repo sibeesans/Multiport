@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <h2 align="center">
 <hr>
-🚀 XRAY Multiport Websocket BAGOES VPN 🚀
+🚀 XRAY Multiport Websocket Bagoes Vpn 🚀
 <h2><hr>
   
 <h2 align="center"> ♦️Supported Linux Distribution♦️</h2>
