@@ -1195,13 +1195,6 @@ systemctl enable xray@trnone.service
 systemctl start xray@trnone.service
 systemctl restart xray@trnone.service
 
-# enable xray trojan xtls
-echo -e "[ ${green}OK${NC} ] Restarting Trojan XTLS"
-systemctl daemon-reload
-systemctl enable xray@xtrojan.service
-systemctl start xray@xtrojan.service
-systemctl restart xray@xtrojan.service
-
 # enable xray trojan tcp
 echo -e "[ ${green}OK${NC} ] Restarting Trojan TCP"
 systemctl daemon-reload
@@ -1247,16 +1240,6 @@ wget -O del-tr "https://${Server_URL}/del-tr.sh" && chmod +x del-tr
 wget -O renew-tr "https://${Server_URL}/renew-tr.sh" && chmod +x renew-tr
 wget -O user-tr "https://${Server_URL}/user-tr.sh" && chmod +x user-tr
 wget -O trial-tr "https://${Server_URL}/trial-tr.sh" && chmod +x trial-tr
-
-# // TROJAN TCP XTLS
-echo -e "[ ${green}INFO${NC} ] Downloading XRAY Vless TCP XTLS Files"
-sleep 1
-wget -O add-xrt "https://${Server_URL}/add-xrt.sh" && chmod +x add-xrt
-wget -O cek-xrt "https://${Server_URL}/cek-xrt.sh" && chmod +x cek-xrt
-wget -O del-xrt "https://${Server_URL}/del-xrt.sh" && chmod +x del-xrt
-wget -O renew-xrt "https://${Server_URL}/renew-xrt.sh" && chmod +x renew-xrt
-wget -O user-xrt "https://${Server_URL}/user-xrt.sh" && chmod +x user-xrt
-wget -O trial-xrt "https://${Server_URL}/trial-xrt.sh" && chmod +x trial-xrt
 
 # // TROJAN TCP FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan TCP Files"
