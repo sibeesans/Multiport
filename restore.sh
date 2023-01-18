@@ -37,7 +37,6 @@ systemctl restart xray@vless.service
 systemctl restart xray@vnone.service
 systemctl restart xray@trojanws.service
 systemctl restart xray@trnone.service
-systemctl restart xray@xtrojan.service
 systemctl restart xray@trojan.service
 service cron restart
 sleep 0.5
