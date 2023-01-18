@@ -183,19 +183,17 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•10\033[0m]  Check VPN Port
  [\033[1;36m•11\033[0m]  Restart VPN Services
  [\033[1;36m•12\033[0m]  Speedtest VPS
- [\033[1;36m•13\033[0m]  Check RAM
- [\033[1;36m•14\033[0m]  Check Bandwith
- [\033[1;36m•15\033[0m]  Reboot
- [\033[1;36m•16\033[0m]  Backup Vps
- [\033[1;36m•17\033[0m]  Restore Vps
+ [\033[1;36m•13\033[0m]  Check Bandwith
+ [\033[1;36m•14\033[0m]  Reboot
+ [\033[1;36m•15\033[0m]  Backup Vps
+ [\033[1;36m•16\033[0m]  Restore Vps
 "
 echo -e " \033[1;37mType [ x ] To Exit From Menu \033[0m"
 echo ""
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
-echo -e " Version       :\033[1;36m Multiport X-ray Lite\e[0m"
+echo -e " Version       :\033[1;36m Lite\e[0m"
 echo -e " Client Name   : $Name"
-echo -e " Expiry Script : $Exp"
-echo -e " Status Script : ${G}UnliMited${NC}"
+echo -e " Kadaluarsa    : $Exp"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
 echo ""
 echo -ne " Select menu : "; read opt
@@ -212,10 +210,9 @@ case $opt in
 10) clear ; info ;;
 11) clear ; restart ;;
 12) clear ; speedtest ;;
-13) clear ; ram ;;
-14) clear ; vnstat ;;
-15) clear ; reboot ;;
-16) clear ; backup ;;
-17) clear ; restore ;;
+13) clear ; vnstat ;;
+14) clear ; reboot ;;
+15) clear ; backup ;;
+16) clear ; restore ;;
 x) exit ;;
 esac
