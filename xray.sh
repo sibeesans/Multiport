@@ -961,90 +961,6 @@ cat > /usr/local/etc/xray/trojan.json << END
 }
 END
 
-# // INSTALLING TROJAN TCP XTLS
-cat > /usr/local/etc/xray/xtrojan.json << END
-{
-    "log": {
-        "access": "/var/log/xray/access5.log",
-        "error": "/var/log/xray/error.log",
-        "loglevel": "info"
-  },
-  "inbounds": [
-    {
-      "port": 443,
-      "protocol": "trojan",
-      "settings": {
-        "clients": [
-          {
-            "id": "${uuid}",
-            "flow": "xtls-rprx-direct",
-            "level": 0,
-            "email": ""
-#trojan-xtls
-          }
-        ],
-        "decryption": "none",
-        "fallbacks": [
-                    {
-                        "dest": 1310,
-                        "xver": 1
-                    },
-                    {
-                        "alpn": "h2",
-                        "dest": 1318,
-                        "xver": 1
-                    },
-                    {
-                        "path": "/vmess-tls",
-                        "dest": 1311,
-                        "xver": 1
-                    },
-                    {
-                        "path": "/vless-tls",
-                        "dest": 1312,
-                        "xver": 1
-                    },
-                    {
-                        "path": "/trojan-tls",
-                        "dest": 1313,
-                        "xver": 1
-                    }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "xtls",
-        "xtlsSettings": {
-          "minVersion": "1.2",
-		  "alpn": [
-			"http/1.1",
-			"h2"
-		  ],
-          "certificates": [
-            {
-                    "certificateFile": "/usr/local/etc/xray/xray.crt",
-                    "keyFile": "/usr/local/etc/xray/xray.key"
-            }
-          ]
-        }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
-    }
-  ]
-}
-END
-
 rm -rf /etc/systemd/system/xray.service.d
 rm -rf /etc/systemd/system/xray@.service.d
 
@@ -1102,7 +1018,9 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              listen 8080;
              listen [::]:8080;
              listen 8880;
-             listen [::]:8880;	
+             listen [::]:8880;
+	     listen 55;
+             listen [::]:55;
              server_name 127.0.0.1 localhost;
              ssl_certificate /usr/local/etc/xray/xray.crt;
              ssl_certificate_key /usr/local/etc/xray/xray.key;
@@ -1126,8 +1044,11 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ ilocation = /vmess-ntls' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation /' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iif ($http_upgrade != "Upgrade") {' /etc/nginx/conf.d/xray.conf
+sed -i '$ irewrite /(.*) /vmess-ntls break;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:23456;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
