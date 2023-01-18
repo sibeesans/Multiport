@@ -68,6 +68,5 @@ echo $SUB_DOMAIN > /root/domain
 cp /root/domain /etc/xray/
 echo $SUB_DOMAIN > /etc/v2ray/domain
 echo $SUB_DOMAIN > /etc/xray/domain
-echo $SUB_DOMAIN > /root/domain
 echo $SUB_DOMAIN > /etc/xray/domain
 rm -f /root/cf.sh
