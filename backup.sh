@@ -1,6 +1,5 @@
 #!/bin/bash
 # =========================================
-
 red='\e[1;31m'
 green='\e[0;32m'
 purple='\e[0;35m'
@@ -54,4 +53,4 @@ echo ""
 echo "If you want to restore data, please enter the link above"
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
-echo ""�������������
+echo ""
