@@ -129,26 +129,8 @@ myver="$(cat /home/ver)"
 # // script version check
 serverV=$( curl -sS https://${Server_URL}/version_check_v2)
 
-function updatews(){
-clear
-echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
-sleep 1
-cd
-wget -q -O /root/update-v2.sh "https://${Server_URL}/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
-sleep 1
-rm -f /root/update-v2.sh
-rm -f /home/ver
-version_check_v2=$( curl -sS https://${Server_URL}/version_check_v2)
-echo "$version_check_v2" >> /home/ver
-clear
-echo ""
-echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
-sleep 1
-echo ""
-read -n 1 -s -r -p "Press any key to continue..."
-menu
-}
 
+clear
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                 INFO SERVER                \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
@@ -187,75 +169,54 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•1 \033[0m]  XRAY Vmess WS Panel
  [\033[1;36m•2 \033[0m]  XRAY Vless WS Panel
  [\033[1;36m•3 \033[0m]  XRAY Trojan WS Panel
- [\033[1;36m•4 \033[0m]  XRAY Trojan TCP XTLS Panel
- [\033[1;36m•5 \033[0m]  XRAY Trojan TCP Panel
- [\033[1;36m•6 \033[0m]  WSS Converter Panel"
+ [\033[1;36m•4 \033[0m]  XRAY Trojan TCP Panel"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;41;36m                OTHERS MENU                 \E[0m"
+echo -e " \E[0;41;36m                OTHER MENU                  \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
- [\033[1;36m•7 \033[0m]  Install Ads Block
- [\033[1;36m•8 \033[0m]  Install TCP BBR
- [\033[1;36m•9 \033[0m]  Ads Block Panel
- [\033[1;36m•10\033[0m]  DNS Changer
- [\033[1;36m•11\033[0m]  Netflix Checker
- [\033[1;36m•12\033[0m]  Limit Bandwith Speed"
+ [\033[1;36m•5 \033[0m]  Install TCP BBR
+ [\033[1;36m•6 \033[0m]  Limit Bandwith Speed
+ [\033[1;36m•7 \033[0m]  Change Domain
+ [\033[1;36m•8 \033[0m]  Renew Certificate XRAY"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                SYSTEM MENU                 \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
- [\033[1;36m•13\033[0m]  Change Domain
- [\033[1;36m•14\033[0m]  Renew Certificate XRAY
- [\033[1;36m•15\033[0m]  Check VPN Status
- [\033[1;36m•16\033[0m]  Check VPN Port
- [\033[1;36m•17\033[0m]  Restart VPN Services
- [\033[1;36m•18\033[0m]  Speedtest VPS
- [\033[1;36m•19\033[0m]  Check RAM
- [\033[1;36m•20\033[0m]  Check Bandwith
- [\033[1;36m•21\033[0m]  Backup
- [\033[1;36m•22\033[0m]  Restore
- [\033[1;36m•23\033[0m]  Reboot
+ [\033[1;36m•9 \033[0m]  Check VPN Status
+ [\033[1;36m•10\033[0m]  Check VPN Port
+ [\033[1;36m•11\033[0m]  Restart VPN Services
+ [\033[1;36m•12\033[0m]  Speedtest VPS
+ [\033[1;36m•13\033[0m]  Check RAM
+ [\033[1;36m•14\033[0m]  Check Bandwith
+ [\033[1;36m•15\033[0m]  Reboot
+ [\033[1;36m•16\033[0m]  Backup Vps
+ [\033[1;36m•17\033[0m]  Restore Vps
 "
-if [[ $serverV > $myver ]]; then
-echo -e " [\033[1;36m•24\033[0m]  Update Autoscript To V$serverV\n"
-up2u="updatews"
-else
-up2u="menu"
-fi
 echo -e " \033[1;37mType [ x ] To Exit From Menu \033[0m"
 echo ""
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
-echo -e " Version       :\033[1;36m Multiport Websocket $myver\e[0m"
+echo -e " Version       :\033[1;36m Multiport X-ray Lite\e[0m"
 echo -e " Client Name   : $Name"
 echo -e " Expiry Script : $Exp"
-echo -e " Status Script : ${G}Lifetime${NC}"
+echo -e " Status Script : ${G}UnliMited${NC}"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
 echo ""
 echo -ne " Select menu : "; read opt
 case $opt in
-1) clear ; menu-ws ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-2) clear ; menu-vless ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-3) clear ; menu-tr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-4) clear ; menu-xrt ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-5) clear ; menu-xtr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-6) clear ; wssgen ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-7) clear ; ins-helium ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-8) clear ; bbr ; menu ;;
-9) clear ; helium ; menu ;;
-10) clear ; dns ; echo "" ; menu ;;
-11) clear ; nf ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-12) clear ; limit ; echo "" ; menu ;;
-13) clear ; add-host ; menu ;;
-14) clear ; certxray ; menu ;;
-15) clear ; status ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-16) clear ; info ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-17) clear ; restart ; menu ;;
-18) clear ; speedtest ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-19) clear ; ram ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-20) clear ; vnstat ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-21) clear ; backup ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-22) clear ; restore ; menu ;;
-23) clear ; reboot ;;
-24) clear ; $up2u ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-00 | 0) clear ; menu ;;
-x | X) exit ;;
-*) clear ; menu ;;
+1) clear ; menu-ws ;;
+2) clear ; menu-vless ;;
+3) clear ; menu-tr ;;
+4) clear ; menu-xtr ;;
+5) clear ; bbr ;;
+6) clear ; limit ;;
+7) clear ; add-host ;;
+8) clear ; certxray ;;
+9) clear ; status ;;
+10) clear ; info ;;
+11) clear ; restart ;;
+12) clear ; speedtest ;;
+13) clear ; ram ;;
+14) clear ; vnstat ;;
+15) clear ; reboot ;;
+16) clear ; backup ;;
+17) clear ; restore ;;
+x) exit ;;
 esac
