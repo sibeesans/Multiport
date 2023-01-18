@@ -1,10 +1,5 @@
 #!/bin/bash
 # =========================================
-# Quick Setup | Script Setup Manager
-# Edition : Stable Edition V1.0
-# Auther  : Geo Project
-# (C) Copyright 2022
-# =========================================
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -32,7 +27,6 @@ systemctl stop xray@vless.service
 systemctl stop xray@vnone.service
 systemctl stop xray@trojan.service
 systemctl stop xray@trnone.service
-systemctl stop xray@xtrojan.service
 systemctl stop xray@trojan.service
 echo -e "[ ${green}INFO${NC} ] Starting renew cert... "
 rm -r /root/.acme.sh
@@ -53,7 +47,6 @@ systemctl restart xray@vless.service
 systemctl restart xray@vnone.service
 systemctl restart xray@trojanws.service
 systemctl restart xray@trnone.service
-systemctl restart xray@xtrojan.service
 systemctl restart xray@trojan.service
 echo -e "[ ${green}INFO${NC} ] All finished !" 
 sleep 1
