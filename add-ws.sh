@@ -119,7 +119,7 @@ sed -i '/#none$/a\### '"$user $exp"'\
 cat> /usr/local/etc/xray/$user-tls.json << EOF
       {
       "v": "2",
-      "ps": "XRAY_VMESS_TLS_${user}",
+      "ps": "${user}",
       "add": "${sts}${domain}",
       "port": "443",
       "id": "${uuid}",
@@ -136,7 +136,7 @@ EOF
 cat> /usr/local/etc/xray/$user-none.json << EOF
       {
       "v": "2",
-      "ps": "XRAY_VMESS_NON_TLS_${user}",
+      "ps": "${user}",
       "add": "${sts}${domain}",
       "port": "80",
       "id": "${uuid}",
