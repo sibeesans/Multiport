@@ -268,6 +268,7 @@ wget -O menu-ws "https://${Server_URL}/menu-ws.sh"
 wget -O menu-vless "https://${Server_URL}/menu-vless.sh"
 wget -O menu-xtr "https://${Server_URL}/menu-xtr.sh"
 wget -O certxray "https://${Server_URL}/cert.sh"
+wget -O cbw "https://${Server_URL}/ckbw.sh"
 chmod +x bbr
 chmod +x add-host
 chmod +x speedtest
@@ -282,6 +283,7 @@ chmod +x menu-ws
 chmod +x menu-vless
 chmod +x menu-xtr
 chmod +x certxray
+chmod +x cbw
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
 echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
