@@ -7,7 +7,7 @@ purple='\e[0;35m'
 orange='\e[0;33m'
 NC='\e[0m'
 source /var/lib/premium-script/ipvps.conf
-domain=$(cat /usr/local/etc/xray/domain)
+domain=$(cat /root/domain)
 clear
 echo -e "[ ${green}INFO${NC} ] Renew Certificate In Progress ~" 
 sleep 0.5
@@ -33,7 +33,7 @@ echo -e "[ ${green}INFO${NC} ] Renew Certificate Completed !"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Restart All Service" 
 sleep 1
-echo $domain > /usr/local/etc/xray/domain
+echo $domain > /root/domain
 systemctl restart nginx
 systemctl restart xray.service
 systemctl restart xray@none.service
