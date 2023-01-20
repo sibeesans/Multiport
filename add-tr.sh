@@ -115,8 +115,8 @@ sed -i '/#tr$/a\### '"$user $exp"'\
 sed -i '/#trnone$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/trnone.json
 
-trojanlink1="trojan://${uuid}@${sts}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${sni}#${user}"
-trojanlink2="trojan://${uuid}@${sts}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#${user}"
+trojanlink1="trojan://${uuid}@${domain}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${domain}#VIP-${user}"
+trojanlink2="trojan://${uuid}@${domain}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#VIP-${user}"
 
 #Restart service
 systemctl restart xray@trojanws.service
@@ -125,7 +125,7 @@ service cron restart
 
 clear
 echo -e ""
-echo -e "═════[XRAY TROJAN WS]═════"
+echo -e "═════[VIP TROJAN WS]═════"
 echo -e "Remarks           : ${user}"
 echo -e "Domain            : ${domain}"
 echo -e "Port TLS          : 443"
