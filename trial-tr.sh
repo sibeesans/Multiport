@@ -16,8 +16,8 @@ sed -i '/#tr$/a\### '"$user $exp"'\
 sed -i '/#trnone$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/trnone.json
 
-trojanlink1="trojan://${uuid}@${domain}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${domain}#XRAY_TROJAN_TLS_${user}"
-trojanlink2="trojan://${uuid}@${domain}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#XRAY_TROJAN_NTLS_${user}"
+trojanlink1="trojan://${uuid}@${domain}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${domain}#${user}"
+trojanlink2="trojan://${uuid}@${domain}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#${user}"
 
 systemctl restart xray@trojanws.service
 systemctl restart xray@trnone.service
