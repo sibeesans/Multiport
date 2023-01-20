@@ -116,8 +116,8 @@ sed -i '/#tls$/a\### '"$user $exp"'\
 sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/vnone.json
 
-vlesslink1="vless://${uuid}@${sts}${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless-tls&allowInsecure=1&sni=${sni}#${user}"
-vlesslink2="vless://${uuid}@${sts}${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#${user}"
+vlesslink1="vless://${uuid}@${sts}${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless-tls&allowInsecure=1&sni=${sni}#VIP-${user}"
+vlesslink2="vless://${uuid}@${sts}${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#VIP-${user}"
 
 # Restart Service
 systemctl restart xray@vless.service
@@ -126,7 +126,7 @@ service cron restart
 
 clear
 echo -e ""
-echo -e "════[XRAY VLESS WS]═════"
+echo -e "════[VIP VLESS WS]═════"
 echo -e "Remarks           : ${user}"
 echo -e "Domain            : ${domain}"
 echo -e "Port TLS          : 443"
