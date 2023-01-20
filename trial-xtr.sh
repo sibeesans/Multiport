@@ -14,7 +14,7 @@ hariini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#tr$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/trojan.json
 
-trojanlink="trojan://${uuid}@${sts}${domain}:443?security=tls&type=tcp&allowInsecure=1&sni=${domain}#XRAY_TROJAN_TCP_${user}"
+trojanlink="trojan://${uuid}@${sts}${domain}:443?security=tls&type=tcp&allowInsecure=1&sni=${domain}#${user}"
 
 systemctl restart xray@trojan.service
 service cron restart
