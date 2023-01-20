@@ -159,7 +159,7 @@ service cron restart
 
 clear
 echo -e ""
-echo -e "═════[XRAY VMESS WS]═════"
+echo -e "═════[VIP VMESS WS]═════"
 echo -e "Remarks           : ${user}"
 echo -e "Domain            : ${domain}"
 echo -e "Port TLS          : 443"
