@@ -65,7 +65,6 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      --data '{"type":"A","name":"'${WILD_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
 echo "Host : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/domain
-cp /root/domain /etc/xray/
 echo $SUB_DOMAIN > /etc/v2ray/domain
 echo $SUB_DOMAIN > /etc/xray/domain
 echo $SUB_DOMAIN > /etc/xray/domain
