@@ -174,19 +174,17 @@ echo -e " \E[0;41;36m                OTHER MENU                  \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
  [\033[1;36m•5 \033[0m]  Install TCP BBR
  [\033[1;36m•6 \033[0m]  Limit Bandwith Speed
- [\033[1;36m•7 \033[0m]  Change Domain
- [\033[1;36m•8 \033[0m]  Renew Certificate XRAY"
+ [\033[1;36m•7 \033[0m]  Check Vpn Status
+ [\033[1;36m•8 \033[0m]  Check Vpn Port"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                SYSTEM MENU                 \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
- [\033[1;36m•9 \033[0m]  Check VPN Status
- [\033[1;36m•10\033[0m]  Check VPN Port
- [\033[1;36m•11\033[0m]  Restart VPN Services
- [\033[1;36m•12\033[0m]  Speedtest VPS
- [\033[1;36m•13\033[0m]  Check Bandwith
- [\033[1;36m•14\033[0m]  Reboot
- [\033[1;36m•15\033[0m]  Backup Vps
- [\033[1;36m•16\033[0m]  Restore Vps
+ [\033[1;36m•9 \033[0m]  Restart Vpn Services
+ [\033[1;36m•10\033[0m]  Speedtest VPS
+ [\033[1;36m•11\033[0m]  Cek Bandwith
+ [\033[1;36m•12\033[0m]  Reboot
+ [\033[1;36m•13\033[0m]  Backup Vps
+ [\033[1;36m•14\033[0m]  Restore Vps
 "
 echo -e " \033[1;37mType [ x ] To Exit From Menu \033[0m"
 echo ""
@@ -204,15 +202,13 @@ case $opt in
 4) clear ; menu-xtr ;;
 5) clear ; bbr ;;
 6) clear ; limit ;;
-7) clear ; add-host ;;
-8) clear ; certxray ;;
-9) clear ; status ;;
-10) clear ; info ;;
-11) clear ; restart ;;
-12) clear ; speedtest ;;
-13) clear ; vnstat ;;
-14) clear ; reboot ;;
-15) clear ; backup ;;
-16) clear ; restore ;;
+7) clear ; status ;;
+8) clear ; info ;;
+9) clear ; restart ;;
+10) clear ; speedtest ;;
+11) clear ; vnstat ;;
+12) clear ; reboot ;;
+13) clear ; backup ;;
+14) clear ; restore ;;
 x) exit ;;
 esac
