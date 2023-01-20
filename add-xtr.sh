@@ -113,14 +113,14 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#tr$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/trojan.json
-trojanlink="trojan://${uuid}@${sts}${domain}:443?security=tls&type=tcp&allowInsecure=1&sni=${sni}#${user}"
+trojanlink="trojan://${uuid}@${sts}${domain}:443?security=tls&type=tcp&allowInsecure=1&sni=${sni}#VIP-${user}"
 # // Restarting Service
 systemctl restart xray@trojan.service
 service cron restart
 
 clear
 echo -e ""
-echo -e "════[XRAY TROJAN TCP]════"
+echo -e "════[VIP TROJAN TCP]════"
 echo -e "Remarks           : ${user}"
 echo -e "Domain            : ${domain}"
 echo -e "Port              : 443"
