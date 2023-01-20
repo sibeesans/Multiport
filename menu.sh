@@ -174,8 +174,8 @@ echo -e " \E[0;41;36m                OTHER MENU                  \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
  [\033[1;36m•5 \033[0m]  Install TCP BBR
  [\033[1;36m•6 \033[0m]  Limit Bandwith Speed
- [\033[1;36m•7 \033[0m]  Check Vpn Status
- [\033[1;36m•8 \033[0m]  Check Vpn Port"
+ [\033[1;36m•7 \033[0m]  Cek Vpn Status
+ [\033[1;36m•8 \033[0m]  Cek Vpn Port"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                SYSTEM MENU                 \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
