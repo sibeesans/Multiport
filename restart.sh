@@ -1,10 +1,5 @@
 #!/bin/bash
 # =========================================
-# Quick Setup | Script Setup Manager
-# Edition : Stable Edition V1.0
-# Auther  : Geo Project
-# (C) Copyright 2022
-# =========================================
 clear
 fun_bar() {
     CMD[0]="$1"
@@ -60,9 +55,6 @@ res9() {
     systemctl restart xray@trnone.service
 }
 res10() {
-    systemctl restart xray@xtrojan.service
-}
-res11() {
     systemctl restart xray@trojan.service
 }
 
@@ -89,10 +81,8 @@ echo -e "  \033[1;91m Service Restart Trojan TLS\033[1;37m"
 fun_bar 'res8'
 echo -e "  \033[1;91m Service Restart Trojan None TLS\033[1;37m"
 fun_bar 'res9'
-echo -e "  \033[1;91m Service Restart Trojan TCP XTLS\033[1;37m"
-fun_bar 'res10'
 echo -e "  \033[1;91m Service Restart Trojan TCP TLS\033[1;37m"
-fun_bar 'res11'
+fun_bar 'res10'
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
