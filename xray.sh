@@ -1232,6 +1232,7 @@ wget -O del-vless "https://${Server_URL}/del-vless.sh" && chmod +x del-vless
 wget -O renew-vless "https://${Server_URL}/renew-vless.sh" && chmod +x renew-vless
 wget -O user-vless "https://${Server_URL}/user-vless.sh" && chmod +x user-vless
 wget -O trial-vless "https://${Server_URL}/trial-vless.sh" && chmod +x trial-vless
+wget -O cbw "https://${Server_URL}/cbw.sh" && chmod +x cbw
 
 # // TROJAN WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan WS Files"
