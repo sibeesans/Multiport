@@ -4,11 +4,11 @@ clear
 MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 apt install jq curl -y >/dev/null 2>&1
-DOMAIN=remoot.my.id
+DOMAIN=sibe-vpn.live
 read -p "Masukan SubDomain Contoh 'sgd01':" sub
-SUB_DOMAIN=${sub}.remoot.my.id
-CF_ID=arismar.amar@gmail.com
-CF_KEY=f7fa85e2472592639b7d1cf82f1c5490ec1cd
+SUB_DOMAIN=${sub}.sibe-vpn.live
+CF_ID=anfuji184@gmail.com
+CF_KEY=8700ccfd51dec7e1c3c95dd44250c7891b913
 set -euo pipefail
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
