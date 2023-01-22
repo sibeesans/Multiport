@@ -206,7 +206,7 @@ case $opt in
 8) clear ; info ;;
 9) clear ; restart ;;
 10) clear ; speedtest ;;
-11) clear ; vnstat ;;
+11) clear ; cbw ;;
 12) clear ; reboot ;;
 13) clear ; backup ;;
 14) clear ; restore ;;
